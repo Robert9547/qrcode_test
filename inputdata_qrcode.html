@@ -289,25 +289,29 @@
                 ++countResults;
                 lastResult = decodedText;
                 // Handle on success condition with the decoded message.
-                $("#qr-reader-results").html(`
-                
-                <table>
+                // $("#qr-reader-results").html(`
 
-                  <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>Result</th>   
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>${decodedText}</td>
-                        </tr>
-                      </tbody>
-                  </table>
-                
-                `)
+                // <table>
+
+                //   <thead>
+                //       <tr>
+                //         <th>No</th>
+                //         <th>Result</th>   
+                //       </tr>
+                //     </thead>
+                //     <tbody>
+                //       <tr>
+                //         <td>1</td>
+                //         <td>${decodedText}</td>
+                //         </tr>
+                //       </tbody>
+                //   </table>
+
+                // `)
+                var arr = decodedText.split(';');
+                $("#DeviceId").val(arr[0]);
+                $("#url").val(arr[1]);
+                $("#AccessToken").val(arr[2]);
                 console.log(`Scan result ${decodedText}`, decodedResult);
             }
         }
